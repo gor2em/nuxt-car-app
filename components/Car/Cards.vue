@@ -1,7 +1,6 @@
 <script setup>
 
 const { cars } = useCars();
-console.log(cars)
 </script>
 
 <template>
