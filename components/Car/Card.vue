@@ -1,16 +1,24 @@
+<script setup>
+const props = defineProps({
+    car: Object
+});
+</script>
+
 <template>
-    <div class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]">
+    <div class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
+    @click="navigateTo(`/car/${car.name}-${car.id}`)"
+    >
         <div class="flex h-full">
-            <img src="https://content-images.carmax.com/qeontfmijmzv/MY19MKj0XutK084z874jt/9632621fd8464b5c0e54a9dee64ad4e5/tesla.jpg"
+            <img :src="car.url"
                 class="w-[300px] h-full" alt="">
             <div class="p-4 flex flex-col">
                 <div>
                     <h1 class="text-2xl text-blue-700">
-                        Tesla GQ9
+                        {{ car.name }}
                     </h1>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur.</p>
+                    <p class="text-gray-700">{{ car.description }}</p>
                 </div>
-                <h3 class="text-xl mt-auto">$39,555</h3>
+                <h3 class="text-xl mt-auto">{{ car.price }}</h3>
             </div>
         </div>
     </div>

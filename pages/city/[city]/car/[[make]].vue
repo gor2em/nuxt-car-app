@@ -4,6 +4,6 @@
 
 <template>
     <div>
-        <CarCard />
+        <CarCards />
     </div>
 </template>
