@@ -6,11 +6,9 @@ const props = defineProps({
 
 <template>
     <div class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
-    @click="navigateTo(`/car/${car.name}-${car.id}`)"
-    >
+        @click="navigateTo(`/car/${car.name}-${car.id}`)">
         <div class="flex h-full">
-            <img :src="car.url"
-                class="w-[300px] h-full" alt="">
+            <NuxtImg :src="car.url" class="w-[300px] h-full" alt="" />
             <div class="p-4 flex flex-col">
                 <div>
                     <h1 class="text-2xl text-blue-700">
