@@ -1,5 +1,10 @@
 <script setup>
 const error = useError();
+const handleError = () => {
+    clearError({
+        redirect: "/"
+    });
+}
 </script>
 
 <template>
@@ -8,8 +13,8 @@ const error = useError();
         <p class="text-sm">
             {{ error.message }}
         </p>
-        <nuxt-link to="/" class="mt-8 font-bold bg-slate-200 px-4 py-2 rounded-lg">
+        <button @click="handleError" class="mt-8 font-bold bg-slate-200 px-4 py-2 rounded-lg">
             Go Back
-        </nuxt-link>
+        </button>
     </div>
 </template>
