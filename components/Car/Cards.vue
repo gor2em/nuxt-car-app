@@ -18,6 +18,9 @@ const handleFavorite = (id) => {
 
 <template>
     <div class="w-full">
-        <CarCard v-for="car in cars" :key="car.id" :car="car" @favor="handleFavorite" :favored="car.id in favorite" />
+        <!--render with ClientOnly or Card.client.vue-->
+        <ClientOnly>
+            <CarCard v-for="car in cars" :key="car.id" :car="car" @favor="handleFavorite" :favored="car.id in favorite" />
+        </ClientOnly>
     </div>
 </template>
